@@ -9,18 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-from django.core.exceptions import ImproperlyConfigured
 
 from pathlib import Path
-from dotenv import load_dotenv
 import os
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-dotenv_path = os.path.join(BASE_DIR, '.env')
-load_dotenv(dotenv_path=dotenv_path)
-
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,19 +19,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-if 'SECRET_KEY' in os.environ:
-    SECRET_KEY = os.environ['SECRET_KEY']
-else:
-    raise ImproperlyConfigured('A variável de ambiente SECRET_KEY não está definida.')
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-k7+rz*h138vhouesca#*7!dm@&&w6^-cqw$ui%+s0*v+txmwo4'
 
 
-DEBUG = os.environ['DEBUG'] == '1'  # Exemplo de como tratar string para booleano
+# SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = [
-    h.strip() for h in os.getenv('ALLOWED_HOSTS', '').split(',')
-    if h.strip()
-]
+DEBUG = False
+#DEBUG = True
 
+ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '34.70.21.91']
+#ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
@@ -87,28 +76,28 @@ WSGI_APPLICATION = 'xlexapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'xlex_db_local_version_c1',
-            'USER': 'postgres',
-            'PASSWORD': 'mr1703',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'xlex_db_local_version_c1',
+        'USER': 'postgres',
+        'PASSWORD': 'mr1703',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'),
-            'NAME': os.getenv('POSTGRES_DB', 'change-me'),
-            'USER': os.getenv('POSTGRES_USER', 'change-me'),
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'change-me'),
-            'HOST': os.getenv('POSTGRES_HOST', 'change-me'),
-            'PORT': os.getenv('POSTGRES_PORT', '5432'),  # Exemplo de um valor padrão real
-        }
+}"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'data_xlex_prod_xlex01',
+        'USER': 'postgres',
+        'PASSWORD': 'rmmr713a17urpdfg56r',
+        'HOST': '34.71.209.44',  
+        'PORT': '5432',
     }
+}
 
 
 # Password validation
