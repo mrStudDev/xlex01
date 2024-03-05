@@ -14,7 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__name__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 dotenv_path = os.path.join(BASE_DIR, '.env')
 load_dotenv(dotenv_path=dotenv_path)
 
@@ -27,7 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-SECRET_KEY = os.environ['SECRET_KEY']
+if 'SECRET_KEY' in os.environ:
+    SECRET_KEY = os.environ['SECRET_KEY']
+else:
+    raise ImproperlyConfigured('A variável de ambiente SECRET_KEY não está definida.')
+
 
 DEBUG = os.environ['DEBUG'] == '1'  # Exemplo de como tratar string para booleano
 
