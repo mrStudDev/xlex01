@@ -27,14 +27,6 @@ p {
     font-size: 0.8em;
     font-family: 'Merriweather', serif;
 }
-.ck-content {
-    color: #000; /* Cor do texto */
-    background-color: #fff; /* Cor de fundo */
-}
-.ck-editor__editable {
-    color: #000; /* Cor do texto */
-}
-
 
 #title-post-h1 {
     font-size: 20px;
