@@ -67,5 +67,5 @@ def import_from_json(file_path):
         print(f"Erro inesperado: {e}")
 
 if __name__ == "__main__":
-    file_path = "/home/marcosscfloripa/projeto/xlex01/media/uploads/stj_juris_files/Final_data_tratada_data_2024_01.json"
+    file_path = "/home/marcosscfloripa/projeto/xlex01/media/uploads/stj_juris_files/Final_data_tratada_data_2024_02.json"
     import_from_json(file_path)
