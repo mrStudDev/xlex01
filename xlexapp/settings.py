@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ckeditor',
     'app_home',
     'app_manager',
     'app_juris_stj',
@@ -86,9 +85,8 @@ WSGI_APPLICATION = 'xlexapp.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 #Comentário Besta
 
-
-
 """
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -112,6 +110,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
 
 
 
@@ -160,7 +159,6 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-CKEDITOR_UPLOAD_PATH = "uploads/images/"
 # Default primary key field type 
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

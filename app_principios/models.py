@@ -1,7 +1,6 @@
 from email.policy import default
 from django.db import models
 from django.contrib.auth.models import User
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 import random
 from django.utils.text import slugify
@@ -20,7 +19,7 @@ class RamoDireitoModel(models.Model):
 class PrincipiosModel(models.Model):
     principio_name = models.CharField(max_length=255)
     ramo_direito = models.ForeignKey(RamoDireitoModel, null=True, blank=True, on_delete=models.SET_NULL)
-    content = RichTextUploadingField(blank=True, null=True)
+    content = models.TextField(blank=True, null=True)
     meta_description = models.TextField(max_length=250)
     keyword = models.CharField(max_length=255)
     date_created = models.DateTimeField(auto_now_add=True)
