@@ -61,7 +61,7 @@ License: MIT License
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">STF_data</a></li>
-                            <li><a class="dropdown-item" href="#">Upload_stj_data</a></li>
+                            <li><a class="dropdown-item" href="{% url 'app_juris_stj:juris-stj-upload' %}">Upload_stj_data</a></li>
                             <li><a class="dropdown-item" href="#"></a></li>
                             <li><a class="dropdown-item" href="#"></a></li>                                    
                         </ul>
@@ -122,7 +122,7 @@ License: MIT License
                       Jurisprudências
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Superior Trib. Justiça</a></li>
+                      <li><a class="dropdown-item" href="{% url 'app_juris_stj:juris-stj-list' %}">Superior Trib. Justiça</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">

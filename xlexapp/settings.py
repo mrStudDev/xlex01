@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app_home',
     'app_manager',
+    'app_juris_stj',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,9 @@ WSGI_APPLICATION = 'xlexapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 """
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -103,6 +106,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
 
 
 # Password validation
