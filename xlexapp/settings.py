@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'app_manager',
     'app_juris_stj',
     'app_sumulas',
+    'app_searchs',
 ]
 
 MIDDLEWARE = [
@@ -83,8 +84,8 @@ WSGI_APPLICATION = 'xlexapp.wsgi.application'
 #Comentário Besta
 
 
-
 """
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
