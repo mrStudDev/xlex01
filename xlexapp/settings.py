@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'data_xlex_prod_xlex01',
         'USER': 'postgres',
         'PASSWORD': 'rmmr713a17urpdfg56r',
-        'HOST': '34.71.209.44',  
+        'HOST': '35.192.166.85',  
         'PORT': '5432',
     }
 }
