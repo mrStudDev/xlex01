@@ -112,7 +112,7 @@ License: MIT License
                     <a class="nav-link" href="#">Modelos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Principios</a>
+                    <a class="nav-link" href="{% url 'app_principios:principios-list' %}">Principios</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Blog Social</a>
@@ -403,6 +403,7 @@ License: MIT License
   <div class="col-md-4">
 
     <div class="position-sticky" style="top: 1rem;">
+        <br>
         <div class="p-4 mb-3 rounded" id="side-hero">
             <p>Princípios do Direito</p>
             <hr>
@@ -579,7 +580,7 @@ License: MIT License
         <ol class="list-unstyled mb-0">  
             {% for ramo in ramos %}
             <!-- Corrigido para usar 'tipo.name' -->
-            <a href="#" class="a-link-side">{{ ramo.name }}</a><br>
+            <a href="{% url 'app_principios:principios-ramo-direito' ramo.slug %}" class="a-link-side">{{ ramo.name }}</a><br>
             {% endfor %}
         </ol>
     </details><br>
