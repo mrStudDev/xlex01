@@ -1,5 +1,5 @@
 from django import forms
-"""
+
 from .models import ContactMessagesModel
 
 class ContactForm(forms.ModelForm):
@@ -14,4 +14,3 @@ class ContactForm(forms.ModelForm):
         self.fields['subject'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Assunto'})
         self.fields['message'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Menssagem'})
         
-"""

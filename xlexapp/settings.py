@@ -30,6 +30,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '34.70.21.91']
 #ALLOWED_HOSTS = []
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_home',
+    'app_manager',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +89,9 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}"""
+}
+
+"""
 
 DATABASES = {
     'default': {

@@ -9,14 +9,14 @@ from django.http import HttpRequest, HttpResponse
 from django.utils import timezone
 from django.views.generic import TemplateView
 
-#from app_manager .models import PageView
-#from .forms import ContactForm
+from app_manager .models import PageView
+from .forms import ContactForm
 
 class XlexHomeView(ListView):
     model = HomeSite
     template_name = 'index.html'
-
-    """def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
+    
+    def get(self, request: HttpRequest, *args, **kwargs) -> HttpResponse:
         # Lógica para registrar acesso usando PageView
         page, created = PageView.objects.get_or_create(
             page_name="Home Page",
@@ -28,7 +28,8 @@ class XlexHomeView(ListView):
             page.save()
 
         # Chama a implementação base para continuar com o fluxo normal da view
-        return super().get(request, *args, **kwargs)"""
+        return super().get(request, *args, **kwargs)
+    
     
     def get_context_data(self, **kwargs):
         # Chama a implementação base primeiro para obter um contexto
@@ -48,3 +49,39 @@ class XlexHomeView(ListView):
         context["hide_navbar"] = True
         
         return context
+
+# Páginas do Site (sobre, contato, paginas de listas, etc)
+
+def sobre_nos(request):
+    return render(request, 'sobre_nos.html', {'hide_sidebar':True})
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()  # Salva a mensagem no banco de dados
+            return redirect(reverse('app_home:home-view'))  # Redireciona para uma URL de sucesso
+    else:
+        form = ContactForm()
+    return render(request, 'contact_us.html', {'form': form, 'hide_sidebar': True,})
+
+
+class JurisprudenciasListView(TemplateView):
+    template_name = 'jurisprudencias.html'
+
+    def get(self, request, *args, **kwargs):
+        # Lógica para registrar acesso usando PageView
+        page, created = PageView.objects.get_or_create(
+            page_name="Jurisprudências Cards-Tribunais",
+            defaults={'last_accessed': timezone.now()}
+        )
+        if not created:
+            page.view_count += 1
+            page.last_accessed = timezone.now()
+            page.save()
+
+        # Agora, construa o contexto manualmente aqui, pois você está em TemplateView
+        context = {'hide_sidebar': True}
+        # Adicione mais contexto conforme necessário
+        return self.render_to_response(context)
