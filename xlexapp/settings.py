@@ -28,9 +28,10 @@ SECRET_KEY = 'django-insecure-k7+rz*h138vhouesca#*7!dm@&&w6^-cqw$ui%+s0*v+txmwo4
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '35.192.166.85']
+ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '35.192.139.48']
 #ALLOWED_HOSTS = []
 
+#10.128.0.8
 
 # Application definition
 
@@ -106,7 +107,7 @@ DATABASES = {
         'NAME': 'data_xlex_prod_xlex01',
         'USER': 'postgres',
         'PASSWORD': 'rmmr713a17urpdfg56r',
-        'HOST': '35.192.166.85',  
+        'HOST': '35.192.139.48',  
         'PORT': '5432',
     }
 }
