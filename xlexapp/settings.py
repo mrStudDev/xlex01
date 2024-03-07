@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-k7+rz*h138vhouesca#*7!dm@&&w6^-cqw$ui%+s0*v+txmwo4
 DEBUG = False
 #DEBUG = True
 
-ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '34.70.21.91']
+ALLOWED_HOSTS = ['www.xlex.com.br', 'xlex.com.br', '35.192.166.85']
 #ALLOWED_HOSTS = []
 
 
